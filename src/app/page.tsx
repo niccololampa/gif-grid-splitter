@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import RowColInput from "./components/RowColInput";
-import { Dimensions } from "./lib/types";
+import { Dimensions, GifDisplay } from "./lib/types";
 import ImageInput from "./components/ImageInput";
+import GridDisplay from "./components/GridDisplay";
 
 export default function MainPage() {
   const [dimensions, setDimensions] = useState<Dimensions>({
@@ -12,7 +13,7 @@ export default function MainPage() {
   });
 
   const [gifImage, setGifImage] = useState<File | null>(null);
-  const [gifPreview, setGifPreview] = useState<string | null>(null);
+  const [gifDisplay, setGifDisplay] = useState<GifDisplay>(null);
 
   const handleSubmitDimensions = (dimensions: Dimensions) => {
     setDimensions(dimensions);
@@ -22,7 +23,7 @@ export default function MainPage() {
     const gifReader = new FileReader();
 
     gifReader.onloadend = () => {
-      setGifPreview(gifReader.result as string);
+      setGifDisplay(gifReader.result as string);
     };
 
     gifReader.readAsDataURL(image);
@@ -35,7 +36,9 @@ export default function MainPage() {
         handleSubmitDimensions={handleSubmitDimensions}
       />
       <ImageInput handleImageUpload={handleImageUpload} />
-      {gifPreview && <img src={gifPreview} alt="Gif Preview" />}
+      {gifDisplay && (
+        <GridDisplay gifDisplay={gifDisplay} dimensions={dimensions} />
+      )}
     </div>
   );
 }

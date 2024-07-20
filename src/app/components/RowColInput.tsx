@@ -19,8 +19,8 @@ export default function RowColInput(props: RowColInputProps) {
     }
 
     handleSubmitDimensions({
-      rows: formData.rows || 1,
-      cols: formData.cols || 1,
+      rows: Number(formData.rows) || 1,
+      cols: Number(formData.cols) || 1,
     });
   };
 
@@ -33,26 +33,27 @@ export default function RowColInput(props: RowColInputProps) {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}></form>
-      <label className="mr-2">rows</label>
-      <input
-        type="text"
-        onChange={handleChange}
-        placeholder={formData.rows.toString()}
-        value={formData.rows}
-        id="rows"
-        name="rows"
-      />
-      <label className="mr-2">cols</label>
-      <input
-        type="text"
-        onChange={handleChange}
-        placeholder={formData.cols.toString()}
-        value={formData.cols}
-        id="cols"
-        name="cols"
-      />
-      <button type="submit">Submit</button>
+      <form onSubmit={handleSubmit}>
+        <label className="mr-2">rows</label>
+        <input
+          type="text"
+          onChange={handleChange}
+          placeholder={formData.rows.toString()}
+          value={formData.rows}
+          id="rows"
+          name="rows"
+        />
+        <label className="mr-2">cols</label>
+        <input
+          type="text"
+          onChange={handleChange}
+          placeholder={formData.cols.toString()}
+          value={formData.cols}
+          id="cols"
+          name="cols"
+        />
+        <button type="submit">Submit</button>
+      </form>
     </div>
   );
 }
