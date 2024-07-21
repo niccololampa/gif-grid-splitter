@@ -20,10 +20,15 @@ export default function UploadForm(props: UploadFormProps) {
     image: File | null;
   }>({ dimensions, image: null });
   const [selectError, setSelectError] = useState<string | null>(null);
+  const [dimensionsError, setDimensionsError] = useState<string | null>(null);
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    setDimensionsError(null);
+
     if (!formData.image) {
+      setSelectError("no image selected");
       return;
     }
 
@@ -31,10 +36,8 @@ export default function UploadForm(props: UploadFormProps) {
       !Number(formData.dimensions.rows) ||
       !Number(formData.dimensions.cols)
     ) {
-      handleSubmitForm({
-        dimensions: { rows: 1, cols: 1 },
-        image: formData.image,
-      });
+      setDimensionsError("enter valid rows or columns greater than 0");
+      return;
     } else {
       handleSubmitForm({
         dimensions: {
@@ -98,7 +101,7 @@ export default function UploadForm(props: UploadFormProps) {
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               htmlFor="rows"
             >
-              rows(m)
+              Rows(m)
             </label>
             <input
               type="text"
@@ -116,7 +119,7 @@ export default function UploadForm(props: UploadFormProps) {
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               htmlFor="cols"
             >
-              columns(n)
+              Columns(n)
             </label>
             <input
               type="text"
@@ -138,6 +141,8 @@ export default function UploadForm(props: UploadFormProps) {
           </button>
         </div>
       </form>
+      <p className="text-sm text-red-500 ">{selectError}</p>
+      <p className="text-sm text-red-500">{dimensionsError}</p>
     </div>
   );
 }
