@@ -18,7 +18,7 @@ export default function GridDisplay(props: GridDisplayProps) {
   return (
     <div>
       <div
-        className="grid gap-3 "
+        className="grid gap-3 mt-2"
         style={{ gridTemplateRows: gridRows, gridTemplateColumns: gridCols }}
       >
         {gridBoxes.map((_, index) => (

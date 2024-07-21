@@ -31,11 +31,11 @@ export default function MainPage() {
 
   return (
     <div>
+      <ImageInput handleImageUpload={handleImageUpload} />
       <RowColInput
         dimensions={dimensions}
         handleSubmitDimensions={handleSubmitDimensions}
       />
-      <ImageInput handleImageUpload={handleImageUpload} />
       {gifDisplay && (
         <GridDisplay gifDisplay={gifDisplay} dimensions={dimensions} />
       )}
