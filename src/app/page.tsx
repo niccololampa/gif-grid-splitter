@@ -37,6 +37,7 @@ export default function MainPage() {
         dimensions={gifSplitterData.dimensions}
         handleSubmitForm={handleSubmitForm}
       />
+      <p className="text-sm">Created by: Niccolo Lampa</p>
       {gifSplitterData.gifDisplay && (
         <GridDisplay
           gifDisplay={gifSplitterData.gifDisplay}
