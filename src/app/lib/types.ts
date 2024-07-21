@@ -4,3 +4,8 @@ export type Dimensions = {
 };
 
 export type GifDisplay = string | null;
+
+export type GifSplitterData = {
+  dimensions: Dimensions;
+  gifDisplay: GifDisplay;
+};

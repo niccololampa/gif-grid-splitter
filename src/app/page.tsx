@@ -1,43 +1,47 @@
 "use client";
 
 import { useState } from "react";
-import RowColInput from "./components/RowColInput";
-import { Dimensions, GifDisplay } from "./lib/types";
-import ImageInput from "./components/ImageInput";
+import { Dimensions, GifSplitterData } from "./lib/types";
 import GridDisplay from "./components/GridDisplay";
+import UploadForm from "./components/UploadForm";
 
 export default function MainPage() {
-  const [dimensions, setDimensions] = useState<Dimensions>({
-    cols: 1,
-    rows: 1,
+  const [gifSplitterData, setGifSplitterData] = useState<GifSplitterData>({
+    dimensions: { cols: 1, rows: 1 },
+    gifDisplay: null,
   });
 
-  const [gifImage, setGifImage] = useState<File | null>(null);
-  const [gifDisplay, setGifDisplay] = useState<GifDisplay>(null);
-
-  const handleSubmitDimensions = (dimensions: Dimensions) => {
-    setDimensions(dimensions);
-  };
-
-  const handleImageUpload = (image: File) => {
+  const handleSubmitForm = ({
+    dimensions,
+    image,
+  }: {
+    dimensions: Dimensions;
+    image: File;
+  }) => {
     const gifReader = new FileReader();
 
     gifReader.onloadend = () => {
-      setGifDisplay(gifReader.result as string);
+      setGifSplitterData((prevState) => ({
+        ...prevState,
+        gifDisplay: gifReader.result as string,
+        dimensions,
+      }));
     };
 
     gifReader.readAsDataURL(image);
   };
 
   return (
-    <div>
-      <ImageInput handleImageUpload={handleImageUpload} />
-      <RowColInput
-        dimensions={dimensions}
-        handleSubmitDimensions={handleSubmitDimensions}
+    <div className="p-2">
+      <UploadForm
+        dimensions={gifSplitterData.dimensions}
+        handleSubmitForm={handleSubmitForm}
       />
-      {gifDisplay && (
-        <GridDisplay gifDisplay={gifDisplay} dimensions={dimensions} />
+      {gifSplitterData.gifDisplay && (
+        <GridDisplay
+          gifDisplay={gifSplitterData.gifDisplay}
+          dimensions={gifSplitterData.dimensions}
+        />
       )}
     </div>
   );

@@ -1,9 +1,6 @@
-import { Dimensions, GifDisplay } from "../lib/types";
+import { Dimensions, GifDisplay, GifSplitterData } from "../lib/types";
 
-type GridDisplayProps = {
-  gifDisplay: Exclude<GifDisplay, null>;
-  dimensions: Dimensions;
-};
+type GridDisplayProps = GifSplitterData;
 
 export default function GridDisplay(props: GridDisplayProps) {
   const { gifDisplay, dimensions } = props;
@@ -12,8 +9,9 @@ export default function GridDisplay(props: GridDisplayProps) {
 
   const gridBoxes = Array.from({ length: dimensions.cols * dimensions.rows });
 
-  console.log(gridBoxes);
-  console.log(dimensions.cols);
+  if (!gifDisplay) {
+    return;
+  }
 
   return (
     <div>
