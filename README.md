@@ -57,8 +57,8 @@ Used Next.js and Tailwind css. All other features are created without the use of
 2. Create an row and col input form component that will determine the mxn dimension of the grid
 3. Create an image selector component that will only allow gifs to be selected.
 4. Create an grid display that will at first preview the image, then improved it to render the dynamic grid. Look into css styling to provide a working grid.
-5. Css Styling of the app.
+5. Css styling of the app.
 6. Refactor to combine the the row and col input component and image selector component into a single grid component that will update both dimensions and image used of the grid with a single submit button.
 7. Add error handling for invalid row and col input values and image selection errors (invalid gif formart and no image selected)
-8. Testing and bug fixing. 
+8. Testing and bug fixing (input testing, gif image size uploading etc).  
 
