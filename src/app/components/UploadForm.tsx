@@ -52,10 +52,7 @@ export default function UploadForm(props: UploadFormProps) {
   const handleDimensionChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
-    console.log(event.target.name);
-    console.log(event.target.value);
     setFormData((prevState) => {
-      console.log(prevState);
       return {
         ...prevState,
         dimensions: {
