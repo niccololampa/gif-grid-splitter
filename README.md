@@ -25,6 +25,11 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Demo 
 
 
+Gif Grid Splitter:
+
+https://github.com/user-attachments/assets/ba972b1f-12e2-479b-abe7-4259fcd5d585
+
+Error Handling: 
 
 ## Dependencies Used
 
