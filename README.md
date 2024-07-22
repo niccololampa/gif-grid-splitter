@@ -27,7 +27,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 Gif Grid Splitter:
 
-https://github.com/user-attachments/assets/ba972b1f-12e2-479b-abe7-4259fcd5d585
+
+https://github.com/user-attachments/assets/b7f2927c-6da5-4d71-9e4a-feff2c8fae6c
+
 
 Error Handling: 
 
