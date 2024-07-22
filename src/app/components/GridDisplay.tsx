@@ -1,17 +1,31 @@
-import { Dimensions, GifDisplay, GifSplitterData } from "../lib/types";
+import { useEffect, useState } from "react";
+import { GifSplitterData } from "../lib/types";
 
 type GridDisplayProps = GifSplitterData;
 
 export default function GridDisplay(props: GridDisplayProps) {
   const { gifDisplay, dimensions } = props;
-  const gridCols = `repeat(${dimensions.cols}, 1fr)`;
-  const gridRows = `repeat(${dimensions.rows}, 1fr)`;
-
-  const gridBoxes = Array.from({ length: dimensions.cols * dimensions.rows });
 
   if (!gifDisplay) {
     return;
   }
+
+  const [aspectRatio, setAspectRatio] = useState<number>(1);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = gifDisplay;
+
+    img.onload = () => {
+      setAspectRatio(img.width / img.height);
+    };
+  }, [gifDisplay]);
+
+  const gridCols = `repeat(${dimensions.cols}, 1fr)`;
+  const gridRows = `repeat(${dimensions.rows}, 1fr)`;
+  const paddingBottom = `${100 / aspectRatio}%`;
+
+  const gridBoxes = Array.from({ length: dimensions.cols * dimensions.rows });
 
   return (
     <div>
@@ -20,7 +34,11 @@ export default function GridDisplay(props: GridDisplayProps) {
         style={{ gridTemplateRows: gridRows, gridTemplateColumns: gridCols }}
       >
         {gridBoxes.map((_, index) => (
-          <div key={index} className="w-[100%] relative pb-[100%]">
+          <div
+            key={index}
+            className="w-[100%] relative"
+            style={{ paddingBottom }}
+          >
             <img
               src={gifDisplay}
               alt="Gif Preview"
