@@ -1,5 +1,7 @@
 # Gif Grid Splitter App Niccolo Lampa
 
+Takes gif image of any aspect ratio / size and displays in a grid. 
+
 ![Screenshot 2024-07-22 at 3 45 10 PM](https://github.com/user-attachments/assets/278dcfbd-501d-4ff3-8f6f-4a52652283a2)
 
 
