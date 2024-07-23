@@ -15,6 +15,8 @@ export default function GridDisplay(props: GridDisplayProps) {
 
   const [imageSplits, setImageSplits] = useState<string[]>([]);
 
+  const [imageWidth, setImageWidth] = useState(0);
+
   useEffect(() => {
     const img = new Image();
     img.src = gifDisplay;
@@ -22,6 +24,7 @@ export default function GridDisplay(props: GridDisplayProps) {
     img.onload = () => {
       setAspectRatio(img.width / img.height);
       setImageSplits(imageSplitter(img, dimensions));
+      setImageWidth(img.width);
     };
   }, [gifDisplay, dimensions]);
 
@@ -36,11 +39,12 @@ export default function GridDisplay(props: GridDisplayProps) {
   return (
     <div>
       <div
-        className="grid w-[100%] gap-3 mt-2"
+        className="grid gap-1 mt-2"
         style={{
           gridTemplateRows: gridRows,
           gridTemplateColumns: gridCols,
           aspectRatio,
+          width: `${imageWidth}px`,
         }}
       >
         {imageSplits.map((src, index) => (
