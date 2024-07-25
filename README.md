@@ -60,7 +60,7 @@ Used Next.js and Tailwind css.
 
 gifuct-js - to extract the original gif frames and delay/timing (complicated and expensive process without the use of library) 
 
-gif-encoder - to reconsturct the split gifs (reconstruction of gif using smaller  sized frames split based on mxn)
+gif-encoder - encode the smaller gifs using smaller split frames (encoding of gif using smaller sized frames split based on mxn)
 
 All other features are created without the use of third-party libraries handling of frames and cutting of frames based on mxn)  
 
