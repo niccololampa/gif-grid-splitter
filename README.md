@@ -32,7 +32,7 @@ Download example gif : [https://c.tenor.com/GfSX-u7VGM4AAAAC/tenor.gif](https://
 
 Use app. Select gif and input rows and cols 
 
-<strong>Tip: will take a long time to render so use lower rows x cols combination. Start with 2x2.<strong>
+**Tip: will take a long time to render so use lower rows x cols combination. Start with 2x2.**
 
 Will generate an individual gif image per grid item. 
 
