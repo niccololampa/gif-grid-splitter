@@ -37,7 +37,18 @@ export default function MainPage() {
         dimensions={gifSplitterData.dimensions}
         handleSubmitForm={handleSubmitForm}
       />
-      <p className="text-sm">Created by: Niccolo Lampa</p>
+      <p className="text-sm">
+        This app just only uses the browser's computation power to extract,
+        split and reconstruct the gif image.
+      </p>
+      <p className="text-sm">
+        More gif image frames, rows and columns will lead to slower rendering of
+        split image.
+      </p>
+      <p className="text-sm">
+        For faster render for testing use 2x2 or lower mxn combination
+      </p>
+      <p className="text-sm mb-12">Created by: Niccolo Lampa</p>
       {gifSplitterData.gifDisplay && (
         <GridDisplay
           gifDisplay={gifSplitterData.gifDisplay}
