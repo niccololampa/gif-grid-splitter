@@ -68,9 +68,9 @@ Used Next.js and Tailwind css.
 
 All features are created without the use of third-party libraries including handling of frames and splitting of frames based on mxn). 
 
-gifuct-js - to extract the original gif frames and delay/timing (complicated and expensive process without the use of library) 
+gifuct-js - to extract the original gif frames and delay/timing (complicated and expensive process) 
 
-gif-encoder - encode of smaller gifs using smaller split frames (encoding of gif using smaller sized frames split based on mxn)
+gif-encoder - encoding of smaller gifs by combining smaller split frames based on nxm. 
 
 
 
