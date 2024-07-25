@@ -28,7 +28,10 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Download example gif : [https://c.tenor.com/GfSX-u7VGM4AAAAC/tenor.gif](https://c.tenor.com/GfSX-u7VGM4AAAAC/tenor.gif)
+Download example gif : 
+![coding](https://github.com/user-attachments/assets/960a323c-6437-4767-93c5-9213c4e6a607)
+
+
 
 Use app. Select gif and input rows and cols 
 
