@@ -109,12 +109,13 @@ export default function UploadForm(props: UploadFormProps) {
               Rows(m)
             </label>
             <input
-              type="text"
+              type="number"
               onChange={handleDimensionChange}
               placeholder={formData.dimensions.rows.toString()}
               value={formData.dimensions.rows}
               id="rows"
               name="rows"
+              min={1}
               className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             />
           </div>
@@ -127,12 +128,13 @@ export default function UploadForm(props: UploadFormProps) {
               Columns(n)
             </label>
             <input
-              type="text"
+              type="number"
               onChange={handleDimensionChange}
               placeholder={formData.dimensions.cols.toString()}
               value={formData.dimensions.cols}
               id="cols"
               name="cols"
+              min={1}
               className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             />
           </div>
