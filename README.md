@@ -36,6 +36,9 @@ Use app. Select gif and input rows and cols
 
 Will generate an individual gif image per grid item. 
 
+![test](https://github.com/user-attachments/assets/d7c71826-d7f9-4060-937c-1d5f0d2dec47)
+
+
 ## Demo 
 
 Gif Grid Splitter:
