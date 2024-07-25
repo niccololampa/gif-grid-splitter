@@ -60,11 +60,13 @@ Invalid rows or column values
 
 Used Next.js and Tailwind css. 
 
+All features are created without the use of third-party libraries including handling of frames and splitting of frames based on mxn). 
+
 gifuct-js - to extract the original gif frames and delay/timing (complicated and expensive process without the use of library) 
 
 gif-encoder - encode of smaller gifs using smaller split frames (encoding of gif using smaller sized frames split based on mxn)
 
-All other features are created without the use of third-party libraries handling of frames and cutting of frames based on mxn)  
+
 
 
 ## Approach
