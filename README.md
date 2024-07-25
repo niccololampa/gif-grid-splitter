@@ -88,5 +88,9 @@ gif-encoder - encoding of smaller gifs by combining smaller split frames based o
 10. Combine the splt frames based on their row x col coordinate
 11. Reconstruct the combined frames to gif
 12. Render the gifs based on row x col coordinate in grid. 
-13. Testing and bug fixing (input testing, gif image size uploading etc).  
+13. Testing and bug fixing (input testing, gif image size uploading etc).
+
+## Next steps 
+
+Create an api to delegate creation of grid images in the backend. Faster as more computational power compared to browser based gif creation. 
 
